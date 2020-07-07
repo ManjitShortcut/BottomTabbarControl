@@ -1,16 +1,26 @@
-# smallapp
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# BottomTabbarController
+## Code
+```
+Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Bottom Tabbar"),
+      ),
+      body: _pages[selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.pink,
+          onTap: onselect,
+          currentIndex: selectedIndex,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home), title: Text("Home")),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings), title: Text("Settings"))
+          ]),
+    );
+```
+Here you can create differnt pages widget and load seleted the when user select tab perticular items.
+When user tab bottom navigation items at that time ontap method will call. On tab method we have change the chnages the state and load perticular screen
+Keep in mind that the class should be stateful widget.
